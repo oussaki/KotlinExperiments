@@ -10,6 +10,7 @@ import javax.persistence.Id
 import org.springframework.data.repository.CrudRepository
 
 
+
 @RestController
 class GreetingController {
 
