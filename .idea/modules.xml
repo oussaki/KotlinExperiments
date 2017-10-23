@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/experiments.iml" filepath="$PROJECT_DIR$/.idea/modules/experiments.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/experiments_main.iml" filepath="$PROJECT_DIR$/.idea/modules/experiments_main.iml" group="experiments" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/experiments_test.iml" filepath="$PROJECT_DIR$/.idea/modules/experiments_test.iml" group="experiments" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/springb.iml" filepath="$PROJECT_DIR$/src/main/springb.iml" />
     </modules>
   </component>
 </project>

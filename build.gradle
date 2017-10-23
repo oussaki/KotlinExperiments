@@ -3,15 +3,27 @@ version '1.0-SNAPSHOT'
 buildscript {
     ext.kotlin_version = '1.1.51'
     ext.anko_version = '0.10.1'
+    ext.spring_boot_version = '1.5.4.RELEASE'
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlin_version"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version"
     }
 }
 
 apply plugin: 'kotlin'
+apply plugin: "kotlin-spring" // See https://kotlinlang.org/docs/reference/compiler-plugins.html#kotlin-spring-compiler-plugin
+apply plugin: 'org.springframework.boot'
+apply plugin: "kotlin-jpa"
+
+jar {
+    baseName = 'gs-rest-service'
+    version = '0.1.0'
+}
 
 repositories {
     mavenCentral()
@@ -22,6 +34,17 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
     compile "org.jetbrains.anko:anko-coroutines:$anko_version"
     compile "io.reactivex.rxjava2:rxkotlin:2.1.0"
+
+    // spring boot 
+    compile 'org.springframework.boot:spring-boot-starter-web'
+
+    // JPA Data (We are going to use Repositories, Entities, Hibernate, etc...)
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Use MySQL Connector-J
+    compile 'mysql:mysql-connector-java'
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 compileKotlin {
